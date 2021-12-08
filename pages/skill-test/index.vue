@@ -9,7 +9,6 @@
           v-for="(item, i) in dataProgrammer"
           :key="i"
           :name="item.name"
-          :id="item.id"
         />
       </div>
       <div class="col-md-4 text-center">
@@ -65,8 +64,17 @@ export default {
     // only swap checked item
     toRight() {
       this.dataDummy = this.dataDummy.filter((item) => {
-        if (item.checked) {
+        if (item.position === 'left') {
           item.position = 'right'
+          return item
+        }
+      })
+    },
+    toLeft() {
+      this.dataDummy = this.dataDummy.filter((item) => {
+        if (item.position === 'right') {
+          item.position = 'left'
+          return item
         }
       })
     },

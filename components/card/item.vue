@@ -6,7 +6,7 @@
           <input
             type="checkbox"
             aria-label="Checkbox for following text input"
-            v-model="checked"
+            v-model="val"
           />
         </div>
       </div>
@@ -30,8 +30,21 @@ export default {
       type: String,
       default: 'left',
     },
+    value: {
+      type: Boolean,
+      default: false,
+    },
   },
-  computed: {},
+  computed: {
+    val: {
+      get() {
+        return this.value
+      },
+      set(value) {
+        this.$emit('input', value)
+      },
+    },
+  },
 }
 </script>
 
