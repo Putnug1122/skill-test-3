@@ -9,7 +9,11 @@
       <div class="main-content">
         <section class="section">
           <div class="section-body">
-            <Nuxt />
+            <div class="card rounded">
+              <div class="card-body">
+                <Nuxt />
+              </div>
+            </div>
           </div>
         </section>
       </div>
